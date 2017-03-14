@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["mgb8G"]); }
+
+__d('SessionName',['SessionNameConfig','isInIframe'],(function a(b,c,d,e,f,g){var h='_e_',i;function j(){i=(window.name||'').toString();if(i.length==7&&i.substr(0,3)==h){i=i.substr(3);}else{i=c('SessionNameConfig').seed||'';if(!c('isInIframe')())window.name=h+i;}}f.exports={TOKEN:h,getName:function k(){if(i===undefined)j();return i;}};}),null);

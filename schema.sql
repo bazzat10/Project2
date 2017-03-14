@@ -17,5 +17,6 @@ CREATE TABLE users (
   street_no VARCHAR(400) NOT NULL,
   street_name VARCHAR(400) NOT NULL,
   suburb VARCHAR(400) NOT NULL,
-  postcode VARCHAR(400) NOT NULL
+  postcode VARCHAR(400) NOT NULL,
+  password_digest VARCHAR(400) NOT NULL
 );

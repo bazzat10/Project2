@@ -1,7 +1,16 @@
 <h1>Ella's Online Bookstore </h1>
-<p>WELCOME to Ella's Online books Store, Please logon to continue </p>
+<p>WELCOME to Ella's Online books Store. Please log in to enter site </p>
 
-<form class="" action="index.html" method="post">
-  <input type="text" name="" value="">
-  <button type="button" name="button">SUBMIT</button>
+<form action="/login" method="post">
+  <label>email</label>
+  <input name="email" type="text">
+
+  <label>password</label>
+  <input name="password" type="password">
+
+  <button>LOGIN</button>
+</form>
+
+<form action="/create_user">
+  <button>Create NEW User</button>
 </form>

@@ -7,6 +7,7 @@ require_relative 'database_config'
 require_relative 'models/user'
 require_relative 'models/comment'
 require_relative 'models/book'
+require_relative 'models/purchase'
 
 
 
@@ -19,7 +20,7 @@ end
 post '/login' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password]) # authenticates both useremail and user password
-    session[:user_name] = user.name
+    session[:global_variable] = user
     # session = {
     #   :user_name => barry}
     # }
@@ -71,11 +72,39 @@ get '/about_book' do
   erb :about_book
 end
 
+post '/create_comment' do
+  user_comment = Comment.new
+  user_comment.body = params[:comment]
+  user_comment.book_id = params[:book_id]
+  user_comment.user_id = session[:global_variable].id
+  user_comment.save
 
-post 'create_comment' do
-  erb: create_comment
+  redirect '/all_books'
 end
+
+post '/cart' do
+  book = Book.find_by(id: params[:book_id])
+  item= Purchase.new
+  item.book_title = book.book_title
+  item.price = book.price
+  item.book_id = book.id
+  item.user_id = session[:global_variable].id
+  item.save
+
+  @items = Purchase.all
+
+  erb :cart
+
+end
+
+post '/checkout' do
+ @items = Purchase.all
+ @total = Purchase.sum(:price)
+ erb :checkout
+end
+
 post '/end_session' do
-  session[:user_name] = nil
+  Purchase.delete_all
+  session[:global_variable] = nil
    redirect '/'
 end

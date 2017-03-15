@@ -1,0 +1,15 @@
+<h1>Shopping Cart</h1>
+
+<% @items.each do |item| %>
+  <p>Title: <%= item.book[:book_title] %> </p>
+  <p>Price:<%= item.book[:price] %> </p>
+  <hr>
+<% end %>
+
+<form action="/all_books" method="get">
+  <button>Continue Shopping</button>
+</form>
+
+<form action="/checkout" method="post">
+  <button>Checkout</button>
+</form>

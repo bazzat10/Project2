@@ -1,0 +1,14 @@
+<h1>Checkout</h1>
+
+<% @items.each do |item| %>
+  <p>Title: <%= item.book[:book_title] %> </p>
+  <p>Price:<%= item.book[:price] %> </p>
+  <hr>
+<% end %>
+
+<p>TOTAL: <%= @total %></p>
+
+
+<form action="/end_session" method="post">
+  <button>Pay</button>
+</form>

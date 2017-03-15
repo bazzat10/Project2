@@ -1,11 +1,12 @@
 CREATE TABLE books (
   id SERIAL4 PRIMARY KEY,
-  author VARCHAR(400),
-  about_author TEXT,
-  book_title VARCHAR(400),
-  images VARCHAR(400),
-  plot TEXT,
-  year_level TEXT
+  author VARCHAR(400) NOT NULL,
+  about_author TEXT NOT NULL,
+  book_title VARCHAR(400) NOT NULL,
+  images VARCHAR(400) NOT NULL,
+  plot TEXT NOT NULL,
+  year_level TEXT NOT NULL,
+  price INTEGER NOT NULL
 );
 
 CREATE TABLE users (
@@ -27,4 +28,13 @@ CREATE TABLE comments (
   body TEXT,
   book_id INTEGER,
   user_id INTEGER
+);
+
+
+CREATE TABLE purchases (
+  id SERIAL4 PRIMARY KEY,
+  book_title VARCHAR(400) NOT NULL,
+  price INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  book_id INTEGER NOT NULL
 );

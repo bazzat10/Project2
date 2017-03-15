@@ -1,7 +1,20 @@
 <h1>Book</h1>
 
 <img src="<%= @book['images'] %>" alt="">
+<p>TITLE: <%= @book['book_title'] %></p>
 <p>AUTHOR: <%= @book['author'] %></p>
 <p>ABOUT AUTHOR: <%= @book['about_author']%></p>
 <p>PLOT: <%= @book['plot']%></p>
 <p>YEAR LEVEL: <%= @book['year_level']%></p>
+
+
+<form action="/create_comments" method="post">
+  <input name="comment" value="">
+  <button>Submit Comment</button>
+</form>
+
+<% @comments.each do |comment| %>
+  <p>Review: <%= comment[:body] %></p>
+  <p>Comment By: <%= comment.user[:name]%></p>
+  <hr>
+<% end %>

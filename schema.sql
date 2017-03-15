@@ -20,3 +20,11 @@ CREATE TABLE users (
   postcode VARCHAR(400) NOT NULL,
   password_digest VARCHAR(400) NOT NULL
 );
+
+
+CREATE TABLE comments (
+  id SERIAL4 PRIMARY KEY,
+  body TEXT,
+  book_id INTEGER,
+  user_id INTEGER
+);

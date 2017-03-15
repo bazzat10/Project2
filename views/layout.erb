@@ -6,6 +6,12 @@
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
+  <% if (session[:user_name]) != nil %>
+    <p>Logged in as: <%=session[:user_name]%></p>
+    <form action="/end_session" method="post">
+      <button>Logout</button>
+    </form>
+  <% end %>
 
   <%= yield %>
 

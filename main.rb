@@ -5,7 +5,12 @@ require 'pg'
 require 'active_record'
 require_relative 'database_config'
 require_relative 'models/user'
+require_relative 'models/comment'
+require_relative 'models/book'
 
+
+
+enable :sessions
 
 get '/' do
   erb :index
@@ -13,8 +18,12 @@ end
 
 post '/login' do
   user = User.find_by(email: params[:email])
-  if user && user.authenticate(params[:password])
-    redirect '/all_books'
+  if user && user.authenticate(params[:password]) # authenticates both useremail and user password
+    session[:user_name] = user.name
+    # session = {
+    #   :user_name => barry}
+    # }
+    redirect "/all_books"
   else
     erb :index
   end
@@ -40,17 +49,33 @@ post '/new_user' do
 end
 
 get '/all_books' do
-  conn = PG.connect(dbname: 'online_bookstore')
-  sql = "SELECT * FROM books;"
-  @books = conn.exec(sql)
-  conn.close
+  @books = Book.all
+  # conn = PG.connect(dbname: 'online_bookstore')
+  # sql = "SELECT * FROM books;"
+  # @books = conn.exec(sql)
+  # conn.close
   erb :all_books
 end
 
 get '/about_book' do
-  conn = PG.connect(dbname: 'online_bookstore')
-  sql = "SELECT * FROM books WHERE book_title = '#{params[:title]}';"
-  @book = conn.exec(sql)[0]
-  conn.close
+  @book = Book.find_by(book_title: params[:title])
+  book_id = @book.id
+  @comments = Comment.where(book_id: book_id)
+  # conn = PG.connect(dbname: 'online_bookstore')
+  # sql = "SELECT * FROM books WHERE book_title = '#{params[:title]}';"
+  # @book = conn.exec(sql)[0]
+  # sql = "SELECT * FROM comments;"
+  # @comments = conn.exec(sql)
+  # conn.close
+  # binding.pry
   erb :about_book
+end
+
+
+post 'create_comment' do
+  erb: create_comment
+end
+post '/end_session' do
+  session[:user_name] = nil
+   redirect '/'
 end

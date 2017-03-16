@@ -1,16 +1,17 @@
-<h1>Ella's Online Bookstore </h1>
-<p>WELCOME to Ella's Online books Store. Please log in to enter site </p>
+<div class="container">
+  <h1 class="inner-cover">Ella's Online Bookstore </h1>
 
-<form action="/login" method="post">
-  <label>email</label>
-  <input name="email" type="text">
+  <form name="form-signin" action="/login" method="post">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label class="sr-only">Email Address</label>
+    <input class="form-control" name="email" type="email" placeholder="Email Address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input class="form-control" name="password" type="password" placeholder="Password" required>
 
-  <label>password</label>
-  <input name="password" type="password">
+    <button class="btn btn-lg btn-primary btn-block">Login</button>
+  </form>
 
-  <button>LOGIN</button>
-</form>
-
-<form action="/create_user">
-  <button>Create NEW User</button>
-</form>
+  <form action="/create_user">
+    <button class="btn btn-lg btn-primary btn-block">Create new user</button>
+  </form>
+</div>

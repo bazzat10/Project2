@@ -73,13 +73,15 @@ get '/about_book' do
 end
 
 post '/create_comment' do
+  @book = Book.find_by(id: params[:book_id])
+  @comments = Comment.where(book_id: params[:book_id])
   user_comment = Comment.new
   user_comment.body = params[:comment]
   user_comment.book_id = params[:book_id]
   user_comment.user_id = session[:global_variable].id
   user_comment.save
 
-  redirect '/all_books'
+  erb :about_book
 end
 
 post '/cart' do
@@ -103,8 +105,14 @@ post '/checkout' do
  erb :checkout
 end
 
-post '/end_session' do
+delete '/delete_item' do
+  Purchase.where(id: params[:item_id]).destroy_all
+  @items = Purchase.all
+  erb :cart
+end
+
+delete '/end_session' do
   Purchase.delete_all
   session[:global_variable] = nil
-   redirect '/'
+  erb :index
 end

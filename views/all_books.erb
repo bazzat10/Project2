@@ -1,15 +1,19 @@
-<form action="/end_session" method="post">
-  <button>Logout</button>
-</form>
+<div class="container">
 
-<h1>ALL books for purchase</h1>
-<% @books.each do |book| %>
+  <form action="/end_session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+  </form>
 
-  <h2>
-    <a href='/about_book?title=<%= book["book_title"] %>'> <%= book['book_title'] %></a>
-  </h2>
+  <h1 class="text-center">ALL books for purchase</h1>
 
-  <img src="<%= book['images'] %>" alt="">
-  <p>AUTHOR: <%= book['author'] %></p>
-  <hr>
-<% end %>
+  <% @books.each do |book| %>
+    <h2 class="">
+      <a href='/about_book?title=<%= book["book_title"] %>'> <%= book['book_title'] %></a>
+    </h2>
+    <img src="<%= book['images'] %>">
+    <p>AUTHOR: <%= book['author'] %></p>
+    <hr>
+  <% end %>
+
+</div>

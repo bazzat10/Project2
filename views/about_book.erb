@@ -1,34 +1,38 @@
-<form action="/end_session" method="post">
-  <button>Logout</button>
-</form>
-<form action="/all_books" method="get">
-  <button>Back</button>
-</form>
+<div class="container">
 
+  <form action="/end_session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+  </form>
+  <form action="/all_books" method="get">
+    <button>Back</button>
+  </form>
 
-<h1><%= @book['book_title'] %></h1>
+  <h1><%= @book['book_title'] %></h1>
 
-<img src="<%= @book['images'] %>" alt="">
-<p>AUTHOR: <%= @book['author'] %></p>
-<p>ABOUT AUTHOR: <%= @book['about_author']%></p>
-<p>PLOT: <%= @book['plot']%></p>
-<p>YEAR LEVEL: <%= @book['year_level']%></p>
-<p>PRICE: $<%= @book['price']%></p>
+  <img style="max-width:100%;" src="<%= @book['images'] %>" alt="">
 
-<form action="/cart" method="post">
-  <input type="hidden" name="book_id" value="<%= @book['id'] %>">
-  <button>Purchase Book</button>
-</form>
+  <p>AUTHOR: <%= @book['author'] %></p>
+  <p>ABOUT AUTHOR: <%= @book['about_author']%></p>
+  <p>PLOT: <%= @book['plot']%></p>
+  <p>YEAR LEVEL: <%= @book['year_level']%></p>
+  <p>PRICE: $<%= @book['price']%></p>
 
-<form action="/create_comment" method="post">
-  <input type="hidden" name="book_id" value="<%= @book['id'] %>">
-  <textarea name="comment"></textarea>
-  <button>Submit Comment</button>
-</form>
+  <form action="/cart" method="post">
+    <input type="hidden" name="book_id" value="<%= @book['id'] %>">
+    <button>Purchase Book</button>
+  </form>
 
+  <form action="/create_comment" method="post">
+    <input type="hidden" name="book_id" value="<%= @book['id'] %>">
+    <textarea name="comment"></textarea>
+    <button>Submit Comment</button>
+  </form>
 
-<% @comments.each do |comment| %>
-  <p>Review: <%= comment[:body] %></p>
-  <p>Comment By: <%= comment.user[:name]%></p>
-  <hr>
-<% end %>
+  <% @comments.each do |comment| %>
+    <p>Review: <%= comment[:body] %></p>
+    <p>Comment By: <%= comment.user[:name]%></p>
+    <hr>
+  <% end %>
+
+</div>

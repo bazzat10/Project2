@@ -10,13 +10,13 @@ Ella's Online Bookstore was written using Ruby, PostgreSQL, ActiveRecord(providi
 
 * Rough Sketch of the tables-database and their relation to each other.
 
- * Wireframe Sketch - ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch1.JPG)
+ * Wireframe Sketch - ![Alt text](https://github.com/bazzat10/Project2/blob/master/sketch1.JPG)
 
-* Models (Tables) Relation - Sketch 1 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch2.JPG)
+* Models (Tables) Relation - Sketch 1 ![Alt text](https://github.com/bazzat10/Project2/blob/master/sketch2.JPG)
 
-* Models (Tables) Relation - Sketch 2 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch3.JPG)
+* Models (Tables) Relation - Sketch 2 ![Alt text](https://github.com/bazzat10/Project2/blob/master/sketch3.JPG)
 
-* Models (Tables) Relation - Sketch 3 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch4.JPG)
+* Models (Tables) Relation - Sketch 3 ![Alt text](https://github.com/bazzat10/Project2/blob/master/sketch4.JPG)
 
 ### FUNCTION - SOLUTION
 * OUTPUT - User is able to browse the website / read the plot of the book / read comments about the book. Able to purchase multiple books or purchase multiple copies of the same book.

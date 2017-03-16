@@ -1,14 +1,22 @@
 # PROJECT2 - Introducing Ella's Online Bookstore
 
-### Technologies Used
-Ella's Online Bookstore was written in Ruby, PostgreSQL(Initially), ActiveRecord(providing Object Relational Mapping), SQL, HTML and CSS
+### TECHNOLOGIES
+Ella's Online Bookstore was written using Ruby, PostgreSQL, ActiveRecord(providing Object Relational Mapping), SQL, HTML and CSS
 
 ### APPROACH
-* Chosen - BOOKSTORE - ONLINE. As I usually deal with 'scholastics' having to order books for my children through online.
+* Theme - BOOKSTORE - ONLINE. As I usually deal with 'scholastics' having to order books for my children online.
 
-* Rough Sketch of wireframes. On paper.
+* Rough Sketch of wireframes on paper.
 
 * Rough Sketch of the tables-database and their relation to each other.
+
+ * Wireframe Sketch - ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch1.JPG)
+
+* Models (Tables) Relation - Sketch 1 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch2.JPG)
+
+* Models (Tables) Relation - Sketch 2 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch3.JPG)
+
+* Models (Tables) Relation - Sketch 3 ![Alt text](/Users/Barry/wdi11/projects/project2/online_bookstore/sketch4.JPG)
 
 ### FUNCTION - SOLUTION
 * OUTPUT - User is able to browse the website / read the plot of the book / read comments about the book. Able to purchase multiple books or purchase multiple copies of the same book.
@@ -53,10 +61,18 @@ Ella's Online Bookstore was written in Ruby, PostgreSQL(Initially), ActiveRecord
 * Worked mainly on CSS / HTML. Used bootstrap framework with my web application.
 * Started Readme.md
 
+###### 17/03/17
+
+* Completed Readme.md
+* Project Presentation
+* ** THOUGHTS ** I should have approached this better!!!
+
+
 
 ### UNRESOLVED ISSUES
 * SEARCH BUTTON
 * CSS
+* Better Checkout / Receipt page.
 
 ### FUTURE PLANS
 * Create 'SEARCH' Button to search for Title / Year Level

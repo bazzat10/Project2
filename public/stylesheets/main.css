@@ -4,7 +4,6 @@ img {
 }
 
 .container {
-  /*background-color: mistyrose;*/
   background-image: url("background_image2.jpg");
   background-size:100% auto;
 }

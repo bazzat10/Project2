@@ -1,26 +1,32 @@
 <form action="/end_session" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button>Logout</button>
+  <button class="btn btn-info">Logout</button>
 </form>
 
-
-<h1>Shopping Cart</h1>
+<h1 class="h1-heading">Shopping Cart</h1>
 
 <% @items.each do |item| %>
-  <p>Title: <%= item.book[:book_title] %> </p>
-  <p>Price:<%= item.book[:price] %> </p>
-  <p>Item Id:<%= item.id %> </p>
+  <p class="cart-text"><span>Title:</span> <%= item.book[:book_title] %> </p>
+  <p class="cart-text"><span>Price:</span> $ <%= item.book[:price] %> </p>
+  <p class="cart-text"><span>Item Id:</span> <%= item.id %> </p>
   <form class="" action="/delete_item?item_id=<%=item.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button>Delete</button>
+    <button class="btn btn-sm btn-default">Delete</button>
   </form>
   <hr>
 <% end %>
 
-<form action="/all_books" method="get">
-  <button>Continue Shopping</button>
-</form>
-
-<form action="/checkout" method="post">
-  <button>Checkout</button>
-</form>
+<div class="col-xs-6 text-left">
+    <div class="previous">
+      <form action="/all_books" method="get">
+        <button class="btn btn-success">Continue Shopping</button>
+      </form>
+    </div>
+</div>
+<div class="col-xs-6 text-right">
+    <div class="next">
+      <form action="/checkout" method="post">
+        <button class="btn btn-success">Checkout</button>
+      </form>
+    </div>
+</div>

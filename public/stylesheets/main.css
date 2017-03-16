@@ -3,6 +3,54 @@ img {
   max-height: 150px;
 }
 
-body {
-  background-color: mistyrose;
+.container {
+  /*background-color: mistyrose;*/
+  background-image: url("background_image2.jpg");
+  background-size:100% auto;
+}
+
+.h1-heading, #h1-heading {
+  font-family: fantasy;
+  color: white;
+}
+
+.please-login {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+}
+
+.btn {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.bk_title {
+  margin-top: 10px;
+  font-family: 'Bad Script', cursive;
+}
+
+.author {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#comment-text-area {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.logged-in,
+#about-title,
+.about-text,
+.cart-text,
+.checkout-text,
+.new-label {
+  color: white;
+}
+
+#create-btn {
+  margin-top: 10px;
 }

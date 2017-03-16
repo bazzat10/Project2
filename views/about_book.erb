@@ -1,38 +1,45 @@
-<div class="container">
-
-  <form action="/end_session" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button>Logout</button>
-  </form>
-  <form action="/all_books" method="get">
-    <button>Back</button>
-  </form>
-
-  <h1><%= @book['book_title'] %></h1>
-
-  <img style="max-width:100%;" src="<%= @book['images'] %>" alt="">
-
-  <p>AUTHOR: <%= @book['author'] %></p>
-  <p>ABOUT AUTHOR: <%= @book['about_author']%></p>
-  <p>PLOT: <%= @book['plot']%></p>
-  <p>YEAR LEVEL: <%= @book['year_level']%></p>
-  <p>PRICE: $<%= @book['price']%></p>
-
-  <form action="/cart" method="post">
-    <input type="hidden" name="book_id" value="<%= @book['id'] %>">
-    <button>Purchase Book</button>
-  </form>
-
-  <form action="/create_comment" method="post">
-    <input type="hidden" name="book_id" value="<%= @book['id'] %>">
-    <textarea name="comment"></textarea>
-    <button>Submit Comment</button>
-  </form>
-
-  <% @comments.each do |comment| %>
-    <p>Review: <%= comment[:body] %></p>
-    <p>Comment By: <%= comment.user[:name]%></p>
-    <hr>
-  <% end %>
-
+<div class="col-xs-6 text-left">
+  <div class="previous">
+    <form action="/end_session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button id="logout-btn" class="btn btn btn-info">Logout</button>
+    </form>
+  </div>
 </div>
+
+<div class="col-xs-6 text-right">
+  <div class="next">
+    <form action="/all_books" method="get">
+      <button class="btn btn btn-info">Back</button>
+    </form>
+  </div>
+</div>
+
+<h3 id="about-title" class="bk_title"><%= @book['book_title'] %></h1>
+
+<img style="max-width:100%;" src="<%= @book['images'] %>" alt="">
+
+<p class="about-text"><span>AUTHOR:</span> <%= @book['author'] %></p>
+<p class="about-text"><span>ABOUT AUTHOR:</span> <%= @book['about_author']%></p>
+<p class="about-text"><span>PLOT:</span> <%= @book['plot']%></p>
+<p class="about-text"><span>YEAR LEVEL:</span> <%= @book['year_level']%></p>
+<p class="about-text"><span>PRICE:</span> $<%= @book['price']%></p>
+
+<form action="/cart" method="post">
+  <input type="hidden" name="book_id" value="<%= @book['id'] %>">
+  <button class="btn btn-success">Purchase Book</button>
+</form>
+
+<form action="/create_comment" method="post">
+  <div class="form-group">
+    <input type="hidden" name="book_id" value="<%= @book['id'] %>">
+    <textarea id="comment-text-area" name="comment" class="form-control" rows="5" id="comment"></textarea>
+    <button class="btn btn-success">Comment on this book</button>
+  </div>
+</form>
+
+<% @comments.each do |comment| %>
+  <p class="about-text"><span>Comment:</span> <%= comment[:body] %></p>
+  <p class="about-text"><span>By:</span> <%= comment.user[:name]%></p>
+  <hr>
+<% end %>

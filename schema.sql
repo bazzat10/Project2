@@ -25,9 +25,9 @@ CREATE TABLE users (
 
 CREATE TABLE comments (
   id SERIAL4 PRIMARY KEY,
-  body TEXT,
-  book_id INTEGER,
-  user_id INTEGER
+  body TEXT NOT NULL,
+  book_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL
 );
 
 

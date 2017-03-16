@@ -1,34 +1,36 @@
 <!-- id | name | surname | email | phone_no | street_no | street_name | suburb | postcode | password_digest -->
 
-<h1>Ella's Online Bookstore</h1>
-<h3>CREATE NEW USER</h3>
+<h3 class="new-label">Create User</h3>
 <form action="/new_user" method="post">
-  <label>Name</label>
-  <input name="name" type="text">
+  <div class="form-group">
 
-  <label>Surname</label>
-  <input name="surname" type="text">
+    <label class="new-label">Name</label>
+    <input class="form-control" name="name" type="text">
 
-  <label>Email</label>
-  <input name="email" type="text">
+    <label class="new-label">Surname</label>
+    <input class="form-control" name="surname" type="text">
 
-  <label>Phone No.</label>
-  <input name="phone_no" type="text">
+    <label class="new-label">Email</label>
+    <input class="form-control" name="email" type="text">
 
-  <label>Street No.</label>
-  <input name="street_no" type="text">
+    <label class="new-label">Phone No.</label>
+    <input class="form-control" name="phone_no" type="text">
 
-  <label>Street_name</label>
-  <input name="street_name" type="text">
+    <label class="new-label">Street No.</label>
+    <input class="form-control" name="street_no" type="text">
 
-  <label>Suburb</label>
-  <input name="suburb" type="text">
+    <label class="new-label">Street_name</label>
+    <input class="form-control" name="street_name" type="text">
 
-  <label>Postcode</label>
-  <input name="postcode" type="text">
+    <label class="new-label">Suburb</label>
+    <input class="form-control" name="suburb" type="text">
 
-  <label>Choose a Password</label>
-  <input name="password" type="password">
+    <label class="new-label">Postcode</label>
+    <input class="form-control" name="postcode" type="text">
 
-  <button>CREATE</button>
+    <label class="new-label">Choose a Password</label>
+    <input class="form-control" name="password" type="password">
+
+    <button id="create-btn" class="btn btn-success">Create</button>
+  </div>
 </form>

@@ -1,19 +1,21 @@
-<div class="container">
-
-  <form action="/end_session" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button>Logout</button>
-  </form>
-
-  <h1 class="text-center">ALL books for purchase</h1>
-
-  <% @books.each do |book| %>
-    <h2 class="">
-      <a href='/about_book?title=<%= book["book_title"] %>'> <%= book['book_title'] %></a>
-    </h2>
-    <img src="<%= book['images'] %>">
-    <p>AUTHOR: <%= book['author'] %></p>
-    <hr>
-  <% end %>
-
+<div class="span12">
+  <div class="span4 offset2" style="margin-top:15px;">
+    <form action="/end_session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-info">Logout</button>
+    </form>
+  </div>
 </div>
+
+<h1 id="h1-heading" class="text-center">Collection</h1>
+
+<% @books.each do |book| %>
+  <div class="well">
+    <h3 class="bk_title">
+      <a href='/about_book?title=<%= book["book_title"] %>'> <%= book['book_title'] %></a>
+    </h3>
+    <img src="<%= book['images'] %>">
+    <p class="pull-right"><%= book['plot'] %></p>
+    <p class="author">AUTHOR: <%= book['author'] %></p>
+  </div>
+<% end %>

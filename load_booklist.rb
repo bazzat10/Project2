@@ -1,11 +1,12 @@
 require 'sinatra'
 require 'pry'
-require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 require 'pg'
 
 
-db_conn = PG.connect(:dbname => 'online_bookstore')
+# db_conn = PG.connect(:dbname => 'online_bookstore')
+
+db_conn =
 
 file = File.new("booklist.csv", "a+")
 

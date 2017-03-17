@@ -87,5 +87,8 @@ IMPORTANT!! PROPERLY PLAN YOUR...
 
 Before diving into creating / coding your app. I have spent countless hours / days - going back and forth my models(tables) - having to create new columns and new tables each time to get my desired output.
 
+### USER STORIES
 
-CHECK OUT MY WEBSITE - ONLINE BOOKSTORE
+![Alt text](https://github.com/bazzat10/Project2/blob/master/app_review.png)
+
+CHECK OUT MY WEB APP - [Ella's Online Bookstore](https://lit-bayou-99006.herokuapp.com/)
